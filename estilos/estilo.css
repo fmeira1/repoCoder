@@ -1,0 +1,209 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Lato;
+}
+
+.content{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas:"encabezado encabezado encabezado encabezado"
+						"navegacion navegacion navegacion navegacion"
+						"principal  principal  principal  sidebar"
+						"principal  principal  principal  sidebar"
+						"pie        pie        pie        pie";
+}
+
+.content .navegacion,
+.content .sidebar,
+.content .pie{
+	padding: 1em;
+}
+
+.content .encabezado {
+	font-size: 1.2em;
+	background-color: #000;
+	color: #fff;
+	grid-area: encabezado;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.content .navegacion {
+    background-color: #999;
+    color: #000;
+	grid-area: navegacion;
+    padding: 3px;
+}
+
+.content .nav__li { 
+    display: flex;
+	flex-wrap: wrap;
+    list-style: none;
+}
+
+.content .nav__ul a {
+    display: flex;
+    text-decoration: none;
+    padding: 1em;
+    color: black;
+}
+
+.content .nav__ul a:hover {
+    background-color: rgb(165, 163, 163);
+}
+
+
+.content .principal {
+	margin: 1em;
+	grid-area: principal;
+}
+
+.contenedor-productos{
+	display: grid;
+	grid-template-columns: repeat(6, auto);
+	grid-template-rows: repeat(6, auto);
+	grid-template-areas:"tarjeta0 tarjeta0 tarjeta1 tarjeta1 tarjeta2 tarjeta2"
+						"tarjeta3 tarjeta3 tarjeta4 tarjeta4 tarjeta5 tarjeta5"
+						"tarjeta6 tarjeta6 tarjeta7 tarjeta7 tarjeta8 tarjeta8";
+}
+
+.card0,
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7,
+.card8{
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+}
+
+.card0{
+	grid-area: tarjeta0;
+}
+
+.card1{
+	grid-area: tarjeta1;
+}
+
+.card2{
+	grid-area: tarjeta2;
+}
+
+.card3{
+	grid-area: tarjeta3;
+}
+
+.card4{
+	grid-area: tarjeta4;
+}
+
+.card5{
+	grid-area: tarjeta5;
+}
+
+.card6{
+	grid-area: tarjeta6;
+}
+
+.card7{
+	grid-area: tarjeta7;
+}
+
+.card8{
+	grid-area: tarjeta8;
+} 
+
+.card0 img,
+.card1 img,
+.card2 img,
+.card3 img,
+.card4 img,
+.card5 img,
+.card6 img,
+.card7 img,
+.card8 img{
+	width: 15em;
+	height: 15em;
+}
+
+.card .textos{
+	display: flex;
+	flex-direction: column;
+}
+
+.content .sidebar{
+	margin: 1em;
+	background-color: #999;
+	color: #000;
+	grid-area: sidebar;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 150px;
+}
+
+.content .pie{
+	background-color: #000;
+	grid-area: pie;
+	display: flex;
+	flex-direction: column;
+}
+
+.content .pie h2{
+	color: #fff;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.content .pie ul{
+	color: #fff;
+	display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.content .pie a{
+	color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+
+	.content {
+		grid-template-areas:"encabezado encabezado encabezado encabezado"
+							"navegacion navegacion navegacion navegacion"
+							"principal  principal  principal  principal"
+							"sidebar    sidebar    sidebar    sidebar"
+							"pie        pie        pie        pie";
+	}
+
+}
+
+@media screen and (max-width: 1150px){
+	
+	.contenedor-productos{
+		grid-template-areas:"tarjeta0 tarjeta0 tarjeta1 tarjeta1"
+							"tarjeta2 tarjeta2 tarjeta3 tarjeta3"
+							"tarjeta4 tarjeta4 tarjeta5 tarjeta5"
+							"tarjeta6 tarjeta6 tarjeta7 tarjeta7"
+							"tarjeta8 tarjeta8 tarjeta8 tarjeta8";
+	}
+}
